@@ -29,7 +29,7 @@ func newCompletionRequest(c *gin.Context) {
 
 	completion := Completion{
 		Model:       "text-davinci-002",
-		Prompt:      "What is a random fact about beans that not many people know?",
+		Prompt:      "If a bean could talk, what would it say?",
 		Temperature: 0.25,
 		MaxTokens:   60,
 	}
@@ -99,7 +99,7 @@ func newImageRequest(c *gin.Context) {
 
 	// TODO get prompt from some larger list to randomize the results better
 	image := Image{
-		Prompt:         "a bean if it were a man or woman in new york city",
+		Prompt:         "a bean having the best day of its life scoring a goal at the world cup.",
 		N:              1,
 		Size:           "256x256",
 		ResponseFormat: "b64_json",
