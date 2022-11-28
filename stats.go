@@ -37,9 +37,9 @@ func statsWorker() {
 		lastFrees = stats.Frees
 		mutexStats.Unlock()
 
-		// reset ip counter every 60 seconds if any data is stored
+		// reset ip counter every 5 minutes if any data is stored
 		if len(ips.Data()) > 0 {
-			if x == 60 {
+			if x == 300 {
 				x = 0
 				fmt.Println("rate limit: reset ip data")
 				ips.Reset()

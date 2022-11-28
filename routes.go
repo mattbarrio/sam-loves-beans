@@ -29,7 +29,5 @@ func index(c *gin.Context) {
 }
 
 func ping(c *gin.Context) {
-	putResponse("text", "BEANS!!!")
-	putResponse("image", "/static/img/12345.png")
 	c.String(http.StatusOK, "pong")
 }
