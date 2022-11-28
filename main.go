@@ -34,6 +34,7 @@ func main() {
 	r.Use(rateLimit, gin.Recovery(), gin.Logger())
 	r.LoadHTMLGlob("templates/*")
 	r.Static("/static", "./static/")
+	r.Static("/data/ai-images", "./data/ai-images")
 	r.GET("/", index)
 	r.GET("/ping", ping)
 	r.GET("/api/beans/text", newCompletionRequest)
