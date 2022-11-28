@@ -18,5 +18,3 @@ COPY templates ./templates
 
 EXPOSE 8080
 CMD [ "/app/beans" ]
-
-VOLUME /app/data
