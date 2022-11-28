@@ -1,0 +1,31 @@
+{{ template "header.tmpl" .}}
+      <div class="row">
+      {{ range $i, $r := .responses.Responses }}
+        <div class="col">
+          <div class="card margin white">
+            <div class="container">
+              <h3><b>Random Fact #{{ $i }}</b></h3>
+            </div>
+
+            <div class="container">
+              <img class="ai-image-container" id="ai-image-{{ $i }}" src="/static/img/ai/{{ $r.Image }}" alt="" />
+              <span id="ai-text-{{ $i }}">{{ $r.Text }}</span>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+        <div id="hidden-col" class="col" style="display: none;">
+          <div class="card margin white">
+            <div class="container">
+              <h3><b>New Random Fact</b></h3>
+            </div>
+
+            <div class="container">
+              <img class="ai-image-container" id="ai-image-container" src="data:," alt="" />
+              <span id="ai-text-container"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+{{ template "footer.tmpl" .}}

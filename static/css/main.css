@@ -1,0 +1,88 @@
+html body {
+  height: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  color: #515151;
+  font-size: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "main" "footer";
+  grid-template-rows: 1fr 80px;
+}
+main {
+  grid-area: main;
+}
+footer {
+  display: inline-flex;
+  grid-area: footer;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.hover-light-grey:hover,
+.hover-light-gray:hover {
+  color: #000 !important;
+  background-color: #f1f1f1 !important;
+}
+.content,
+.auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container,
+.panel {
+  padding: 0.01em 16px;
+  overflow: hidden;
+}
+.ai-image-container {
+  float: left;
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+.content {
+  max-width: 980px;
+}
+.auto {
+  max-width: 1140px;
+}
+.card,
+.hover-shadow:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.col {
+  width: 50%;
+  float: left;
+}
+.white,
+.hover-white:hover {
+  background-color: #fff !important;
+}
+.margin {
+  margin: 16px !important;
+}
+.margin-top {
+  margin-top: 16px !important;
+}
+.margin-bottom {
+  margin-bottom: 16px !important;
+}
+
+button * {
+  pointer-events: none;
+}
+.button {
+  transition-duration: 0.4s;
+  border: 1px solid #ccc !important;
+  background-color: #4caf50 !important;
+  border-radius: 12px;
+}
+.button:hover {
+  background-color: white !important;
+}
