@@ -16,3 +16,14 @@ Built on:
 
 This is my first project in Go and as such it is super hacky, so I'm sure there
 is a lot of room for improvement...
+
+## Notes
+
+Apparently, building this into a binary doesn't include the templates or static
+assets... so those need to be manually copied to a persistent storage location.
+Make sure to include:
+
+- .env
+- ./data
+- ./static
+- ./templates

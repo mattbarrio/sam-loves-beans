@@ -5,12 +5,11 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 // for some reason gin doesn't let you pass params to functions inside request handlers, so I had to hack this middleware
 func OpenAIConfig() gin.HandlerFunc {
-	godotenv.Load()
+	//godotenv.Load()
 
 	var apiKey = os.Getenv("API_KEY")
 	if apiKey == "" {

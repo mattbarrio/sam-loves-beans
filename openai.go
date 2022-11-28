@@ -21,6 +21,12 @@ func newCompletionRequest(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(c, 5*time.Second)
 	defer cancel()
 
+	if os.Getenv("ENABLE_OPENAI") != "true" {
+		c.Abort()
+		c.JSON(http.StatusOK, "Sorry, AI is disabled, please try again later.")
+		return
+	}
+
 	completion := Completion{
 		Model:       "text-davinci-002",
 		Prompt:      "What is a random fact about beans that not many people know?",
@@ -84,6 +90,12 @@ func newCompletionRequest(c *gin.Context) {
 func newImageRequest(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(c, 35*time.Second)
 	defer cancel()
+
+	if os.Getenv("ENABLE_OPENAI") != "true" {
+		c.Abort()
+		c.String(http.StatusOK, "")
+		return
+	}
 
 	// TODO get prompt from some larger list to randomize the results better
 	image := Image{
@@ -154,7 +166,7 @@ func newImageRequest(c *gin.Context) {
 	// save the image to a file
 	id := uuid.New()
 	fileName := fmt.Sprintf("%s.png", id)
-	fullPath := fmt.Sprintf("static/img/ai/%s", fileName)
+	fullPath := fmt.Sprintf("data/ai-images/%s", fileName)
 	w, err := os.OpenFile(fullPath, os.O_WRONLY|os.O_CREATE, 0777)
 	if err != nil {
 		fmt.Println("os: unable to open file")
