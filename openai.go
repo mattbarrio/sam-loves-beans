@@ -29,7 +29,7 @@ func newCompletionRequest(c *gin.Context) {
 
 	completion := Completion{
 		Model:       "text-davinci-002",
-		Prompt:      "If a bean could talk, what would it say?",
+		Prompt:      "What would a bean say to a class of middle school students?",
 		Temperature: 0.25,
 		MaxTokens:   60,
 	}
@@ -55,7 +55,7 @@ func newCompletionRequest(c *gin.Context) {
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.MustGet("apiKey").(string)))
 
 	client := http.Client{
-		Timeout: 4 * time.Second,
+		Timeout: 30 * time.Second,
 	}
 
 	// TODO break this into a function
@@ -99,7 +99,7 @@ func newImageRequest(c *gin.Context) {
 
 	// TODO get prompt from some larger list to randomize the results better
 	image := Image{
-		Prompt:         "a bean having the best day of its life scoring a goal at the world cup.",
+		Prompt:         "A bean person walking down the street with an umbrella",
 		N:              1,
 		Size:           "256x256",
 		ResponseFormat: "b64_json",
@@ -124,7 +124,7 @@ func newImageRequest(c *gin.Context) {
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.MustGet("apiKey").(string)))
 
 	client := http.Client{
-		Timeout: 30 * time.Second,
+		Timeout: 60 * time.Second,
 	}
 
 	res, err := client.Do(req)
