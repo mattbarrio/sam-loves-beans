@@ -3,7 +3,7 @@
 I was supposed to go visit family over the Thanksgiving holiday but got sick and
 had to cancel, so I decided to play around and learn a little Go.
 
-I have a collegue who LOVES beans. So I built this site dedicated to him and
+I have a collegue who HATES beans. So I built this site dedicated to him and
 beans.
 
 Cheers 🍻, Sam
